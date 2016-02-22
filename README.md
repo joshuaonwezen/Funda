@@ -1,7 +1,5 @@
-# Funda
-#www.funda.nl/cmda-1
-Funda Project Week 1
-
+# Funda Project Week 1
+www.funda.nl/cmda-1
 
 #Samenvatting Opdracht
 
@@ -17,7 +15,7 @@ Bezichting moet eigenlijk alleen bij veel interesse, hier moet Funda voor zorgen
 Welke informatie moet getoond worden? Denk ook aan criminaliteitscijfers die misschien onterecht zijn.
 
 
-# API's
+# API's:
 
 #Zoekopdracht API
 Max 25 resultaten
