@@ -37,15 +37,18 @@ var searchCall = {
             }
             if (storage == undefined) {
                 ajaxRequest.promiseAjaxReq(data).then(function (result) {
+                    flex($('.loader'));
                     localStorage.setItem(request, result);
-                    resultsTemplate.generateTemplate(JSON.parse(result));
+                    listTemplate.generateTemplate(JSON.parse(result));
                 },
                 function (error) {
+                    hide($('.loader'));
                     console.log(error);
                 });
             } else{
                 console.log('Localstorage');
-                resultsTemplate.generateTemplate(JSON.parse(storage));
+                flex($('.loader'));
+                listTemplate.generateTemplate(JSON.parse(storage));
             }
         },
     }

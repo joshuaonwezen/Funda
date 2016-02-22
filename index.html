@@ -7,7 +7,7 @@
         <link rel="shortcut icon" type="image/png" href="resources/favicon.ico"/>
         
         <script src="js/utils.js"></script>
-        <script src="js/resultsTemplate.js"></script>        
+        <script src="js/listTemplate.js"></script>        
         <script src="js/searchCall.js"></script>
         <script src="js/ajaxRequest.js"></script> 
         <script src="js/launcher.js"></script>
@@ -16,7 +16,7 @@
         <header role="banner">
             <nav role="navigation">
                 <div class="logo">
-                    <img src="http://assets.fstatic.nl/792/assets/components/logo/funda-logo.svg">
+                    <img src="resources/funda-logo.svg">
                 </div>
                 <ul>
                     <li><a href="#">Inloggen</a></li>
@@ -25,16 +25,21 @@
             </nav>
             <div class="search">
                 <input type="search"/>
+                <button type="submit">
+                    <span class="icon-search"></span>
+                </button>
             </div>
         </header>
         
+        <div class="loader"></div>
+                
         <main role="main">
             <section id="search-results">
                 <div class="container">
                 </div>
             </section>
         </main>
-
+                
         <footer>
             <nav>
                 <ul> 
