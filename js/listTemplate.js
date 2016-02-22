@@ -34,4 +34,9 @@ var listTemplate = {
         
         hide($('.loader'));
     },
+    createPaging: function(pagenumber){
+        var timeout = setTimeout(function () {
+            searchCall.request.getDataSearch('/amsterdam/tuin/', pagenumber);
+        }, 1000);       
+    },
 }

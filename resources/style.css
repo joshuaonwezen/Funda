@@ -22,7 +22,7 @@ button{
 /* HEADER */
 header nav{
     display:flex;
-    height: 5%;
+    height: 7%;
     color: white;
     background-color: #F8B000;
     border-bottom: 2px solid #6EC8E5;
@@ -39,7 +39,7 @@ header img{
 header .search{
     display:flex;
     background-color: #E7F1F5;
-    height:5%;
+    height: 7%;
     width: 100%;
 }
 header .search input{
@@ -52,14 +52,22 @@ header .search input{
     font-size: 18px;
     padding: 11px 16px 11px 16px;
 }
-header button{
-    height: 48px;
-    width: 48px;
-    /* padding:2px; */
-}
 .icon-search {
     background-image: url(search.svg);
+    background-color: #F5F9FB;
     background-repeat: no-repeat;
+    display:none;
+    height: 38%;
+    width: 1.4em;
+    padding: 0.5em;
+    margin: auto;
+    margin-right: 0.5em;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 1000ms ease-out;
+}
+.icon-search:hover{
+    background-color: #FFFFFF;
 }
 [role="navigation"] > ul{
     display:none;
@@ -162,8 +170,14 @@ footer a:hover{
     [role="navigation"] > ul{
         display:flex;
     }
+    header .logo{
+        margin-left: 1em;
+    }
     header img {
         width: 20%;
+    }
+    .icon-search {
+        display:flex;
     }
     .container{
         flex-flow: row wrap;

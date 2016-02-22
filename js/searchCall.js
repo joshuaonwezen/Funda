@@ -1,7 +1,6 @@
 var searchCall = {
     
     apiKey: 'e2d60e885b8742d4b0648300e3703bd7',
-    apiPage: 1,
     apiPageSize: 25,
     apiSearchUrl: 'http://funda.kyrandia.nl/feeds/Aanbod.svc',
     apiMapUrl: 'http://mt1.funda.nl',
@@ -19,8 +18,9 @@ var searchCall = {
             console.log(data);
         },
         
-        getDataSearch: function (query) {
-            var apiRequest = searchCall.apiSearchUrl + '/json/' + searchCall.apiKey + '/?type=koop&zo=' + query + '&page=' + searchCall.apiPage + '&pagesize=' + searchCall.apiPageSize;
+        getDataSearch: function (query, page) {
+            console.log(page);
+            var apiRequest = searchCall.apiSearchUrl + '/json/' + searchCall.apiKey + '/?type=koop&zo=' + query + '&page=' + page + '&pagesize=' + searchCall.apiPageSize;
             this.createRequest(apiRequest);
         },
         
