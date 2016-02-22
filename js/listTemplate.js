@@ -1,12 +1,12 @@
-var resultsTemplate = {
+var listTemplate = {
 
     generateTemplate: function(data){
-        resultsTemplate.filterData(data);
+        listTemplate.filterData(data);
     },
     filterData: function (data) {
         console.log(data);
         if (data != undefined) {
-            resultsTemplate.createList(data.Objects);
+            listTemplate.createList(data.Objects);
         }
     },
     createList: function(data){
@@ -31,5 +31,7 @@ var resultsTemplate = {
             itemContainer.appendChild(priceLabel);
             htmlResults.appendChild(itemContainer);
         }
+        
+        hide($('.loader'));
     },
 }
