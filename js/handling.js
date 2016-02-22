@@ -4,7 +4,7 @@ var handling = {
     },
     infiteScrolling: function(){
         var pagenumber = 2;
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', _.debounce(function () {
             
             var scrollHeight = $('body').scrollTop;
             var windowHeight = window.innerHeight;
@@ -15,6 +15,6 @@ var handling = {
                 listTemplate.createPaging(pagenumber);
                 pagenumber++;
             }
-        });
+        }, 500));
     },
 }
