@@ -14,6 +14,7 @@ var resultsTemplate = {
         for (var i = 0; data.length > i; i++) {
             var itemContainer = document.createElement('div');
             itemContainer.setAttribute('class', 'item-container');
+            itemContainer.setAttribute('id', data[i].Id);
             
             var img = document.createElement('img');
             img.src = data[i].FotoLarge;
