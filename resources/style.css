@@ -246,9 +246,21 @@ footer a:hover{
     }
 }
 @media all and (min-width: 1250px){
+    header .logo{
+        margin-left: 8%;
+    }
+    header .search input{
+        margin-left:10%;
+    }
+    .icon-search{
+        margin-right:10%;
+    }
     main{
         margin-left: 10%;
         margin-right: 10%;
+    }
+    aside > ul{
+        margin-left: 0;
     }
 }
 

@@ -12,12 +12,12 @@ var listTemplate = {
         //Push state so we can navigate back
         history.pushState(data, 'Funda - Homepage', '#Homepage');
 
-        var htmlResults = $('#search-results > .container');
+        var container = $('#search-results > .container');
         for (var i = 0; data.length > i; i++) {
             //Create all objects needed for the PLP
             var itemContainer = document.createElement('div');
             itemContainer.setAttribute('class', 'item-container');
-            itemContainer.setAttribute('id', data[i].Id);
+            itemContainer.setAttribute('id', 'product-' + data[i].Id);
             
             var img = document.createElement('img');
             img.src = data[i].FotoLarge;
@@ -33,9 +33,9 @@ var listTemplate = {
             
             itemContainer.appendChild(img);
             itemContainer.appendChild(priceLabel);
-            htmlResults.appendChild(itemContainer);
+            container.appendChild(itemContainer);
             
-            handling.listProductClick(data[i].Id);
+            handling.listProductClick('product-' + data[i].Id);
         }
         
         hide($('.loader'));

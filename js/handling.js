@@ -19,7 +19,7 @@ var handling = {
     },
     listProductClick: function(id){
         document.getElementById(id).addEventListener('click', function(){
-            productTemplate.generateTemplate(this.getAttribute('id'));
+            productTemplate.generateTemplate(this.getAttribute('id').replace('product-', ''));
         });
     },
 }

@@ -27,27 +27,39 @@ var section = {
     showSection: function (section) {
         var sectionDiv = $('.' + section);
         if(section == 'Homepage'){
+            flex($('#search-results'))
             flex($('.container'));
+            flex($('.filter'));
+        }else if (section.indexOf('product') != -1){
+            flex($('#product-details'));
+            flex($('#'))
         }
         else if (sectionDiv != undefined) {
-
             show(sectionDiv);
         }
     },
     hideSections: function () {
         //Clear all existing screens
         var screens = $('.container');
+        var sections = $('section');
+        var asides = $('aside');
 
         if(screens.length != undefined){
             for (i = 0; i < screens.length; i++) {
-                console.log(screens[i]);
-
                 hide(screens[i]);
+                hide(sections[i])
+                hide(asides[i]);
             }
-        }else{
+        } else {
             hide(screens);
-        }
 
+            for (var i; i < sections.length; i++) {
+                hide(sections[i]);
+            }
+            for (var i; i < asides.length; i++) {
+                hide(aside);
+            }
+        }
 
     },
 }
