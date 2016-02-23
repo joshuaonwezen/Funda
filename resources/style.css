@@ -11,6 +11,7 @@ main{
 }
 li{
     display:flex;
+    margin-bottom: 0.4em;
 }
 a{
     text-decoration: none;
@@ -93,14 +94,28 @@ header .search input{
 /* FILTER */
 aside{
     display:none;
-    flex:20%;
-    border-bottom: 2px solid #6EC8E5;
-    border-top: 2px solid #6EC8E5;
+    flex: 25%;
+    /* border-bottom: 2px solid #6EC8E5; */
+    /* border-top: 2px solid #6EC8E5; */
+    font-family:"Proxima Nova",sans-serif
 }
 aside > ul{
     -webkit-padding-start: 0;
     margin-left: 1.2em;
     margin-right: 1em;
+}
+aside h3{
+    font-weight: 700;
+    font-size: 100%;
+}
+aside a{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    color:#6EC8E5;
+}
+aside label, aside input{
+    margin-left:0.3em;
+    cursor:pointer;
 }
 /* IMAGES */
 #search-results{
@@ -218,7 +233,7 @@ footer a:hover{
     }
     .container .list-item-price{
         visibility: visible;
-        font-size: 1.7vw;
+        font-size: 1.1vw;
         border: rgb(131, 207, 238) solid 5px;
         width: 50%;
     }
@@ -228,6 +243,12 @@ footer a:hover{
     }
     footer > nav:nth-child(1) > ul > li {
         padding: 0.5em;
+    }
+}
+@media all and (min-width: 1250px){
+    main{
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
 
