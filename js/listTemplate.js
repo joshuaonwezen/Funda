@@ -1,5 +1,4 @@
 var listTemplate = {
-
     generateTemplate: function(data){
         listTemplate.filterData(data);
     },
@@ -10,8 +9,12 @@ var listTemplate = {
         }
     },
     createList: function(data){
+        //Push state so we can navigate back
+        history.pushState(data, 'Funda - Homepage', '#Homepage');
+
         var htmlResults = $('#search-results > .container');
         for (var i = 0; data.length > i; i++) {
+            //Create all objects needed for the PLP
             var itemContainer = document.createElement('div');
             itemContainer.setAttribute('class', 'item-container');
             itemContainer.setAttribute('id', data[i].Id);
@@ -22,6 +25,7 @@ var listTemplate = {
             
             var priceLabel = document.createElement('label');
             priceLabel.setAttribute('class', 'list-item-price');
+            //Convert string to euro
             var price = data[i].Prijs.Koopprijs.toLocaleString("nl-NL",{style:"currency", currency:"EUR"}).split(',');
             var priceText = document.createTextNode(price[0]);
             
@@ -30,6 +34,8 @@ var listTemplate = {
             itemContainer.appendChild(img);
             itemContainer.appendChild(priceLabel);
             htmlResults.appendChild(itemContainer);
+            
+            handling.listProductClick(data[i].Id);
         }
         
         hide($('.loader'));

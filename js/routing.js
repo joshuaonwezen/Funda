@@ -21,14 +21,15 @@ var section = {
             var section = route.split('#');
             this.showSection(section[1]);
         }else{
-            //Show homepage - Exception
-            this.showSection('intro');
-            this.showSection('soundcloud');
+            this.showSection('container');
         }
     },
     showSection: function (section) {
-        var sectionDiv = $('#' + section + '-section');
-        if (sectionDiv != undefined) {
+        var sectionDiv = $('.' + section);
+        if(section == 'Homepage'){
+            flex($('.container'));
+        }
+        else if (sectionDiv != undefined) {
 
             show(sectionDiv);
         }
@@ -36,28 +37,17 @@ var section = {
     hideSections: function () {
         //Clear all existing screens
         var screens = $('.container');
-        for (i = 0; i < screens.length; i++) {
-            hide(screens[i]);
+
+        if(screens.length != undefined){
+            for (i = 0; i < screens.length; i++) {
+                console.log(screens[i]);
+
+                hide(screens[i]);
+            }
+        }else{
+            hide(screens);
         }
+
+
     },
 }
-
-
-
-
-//                    Routie code, don't like it as my code is more efficient for my implementation. 
-//                    Routie requires me to setup a function for each section, instead of just doing it dynamically on change
-//                    routie({
-//                        'playlist': function () {
-//                            webApp.section.hideSections();
-//                            document.getElementById('playlist-section').style.display = "";
-//                        },
-//                        'track': function () {
-//                            webApp.section.hideSections();
-//                            document.getElementById('track-section').style.display = "";
-//                        },
-//                        'details': function () {
-//                            webApp.section.hideSections();
-//                            document.getElementById('details-section').style.display = "";
-//                        }
-//                    });

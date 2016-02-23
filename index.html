@@ -9,8 +9,10 @@
         <script src="lib/underscore.js"></script>
         
         <script src="js/utils.js"></script>
-        <script src="js/listTemplate.js"></script>        
+        <script src="js/listTemplate.js"></script>       
+        <script src="js/productTemplate.js"></script>        
         <script src="js/searchCall.js"></script>
+        <script src="js/routing.js"></script>
         <script src="js/handling.js"></script>
         <script src="js/ajaxRequest.js"></script> 
         <script src="js/launcher.js"></script>
@@ -35,6 +37,16 @@
         <div class="loader"></div>
                 
         <main role="main">
+            <aside>
+                <ul>
+                    <li><h3>Soort aanbod</h3></li>
+                    <li><input type="checkbox" id="offerrooms-1"/><label for="amountrooms-1">Woonhuis</label></li>
+                    <li><input type="checkbox" id="offerrooms-2"/><label for="amountrooms-2">Appartement</label></li>
+                    <li><h3>Aantal kamers</h3></li>
+                    <li><input type="checkbox" id="amountrooms-1"/><label for="amountrooms-1">2+</label></li>
+                    <li><input type="checkbox" id="amountrooms-2"/><label for="amountrooms-2">3+</label></li>
+                </ul>
+            </aside>
             <section id="search-results">
                 <div class="container">
                 </div>

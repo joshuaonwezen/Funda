@@ -21,15 +21,15 @@ var searchCall = {
         getDataSearch: function (query, page) {
             console.log(page);
             var apiRequest = searchCall.apiSearchUrl + '/json/' + searchCall.apiKey + '/?type=koop&zo=' + query + '&page=' + page + '&pagesize=' + searchCall.apiPageSize;
-            this.createRequest(apiRequest);
+            this.createRequest(apiRequest, listTemplate.generateTemplate);
         },
         
         getDataObject: function(id){
             var apiRequest = searchCall.apiSearchUrl + '/json/detail/' + searchCall.apiKey + '/koop/' + id;
-            this.createRequest(apiRequest);
+            this.createRequest(apiRequest, productTemplate.createProduct);
         },
         
-        createRequest: function(request){
+        createRequest: function(request, action){
             var storage = localStorage.getItem(request);
             var data = {
                 method: "GET",
@@ -39,7 +39,7 @@ var searchCall = {
                 ajaxRequest.promiseAjaxReq(data).then(function (result) {
                     flex($('.loader'));
                     localStorage.setItem(request, result);
-                    listTemplate.generateTemplate(JSON.parse(result));
+                    action(JSON.parse(result));
                 },
                 function (error) {
                     hide($('.loader'));
@@ -48,7 +48,7 @@ var searchCall = {
             } else{
                 console.log('Localstorage');
                 flex($('.loader'));
-                listTemplate.generateTemplate(JSON.parse(storage));
+                action(JSON.parse(storage));
             }
         },
     }

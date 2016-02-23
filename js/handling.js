@@ -17,4 +17,9 @@ var handling = {
             }
         }, 500));
     },
+    listProductClick: function(id){
+        document.getElementById(id).addEventListener('click', function(){
+            productTemplate.generateTemplate(this.getAttribute('id'));
+        });
+    },
 }

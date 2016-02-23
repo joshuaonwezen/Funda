@@ -21,6 +21,7 @@ var flex = function(item){
     }
 }
 var hide = function(item) {
+    console.log(item);
     if (item != undefined) {
         item.classList.add('hide');
         item.classList.remove('show');

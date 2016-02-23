@@ -5,6 +5,7 @@
                 searchCall.request.getDataSearch('/amsterdam/tuin/', 1);
                 searchCall.request.getDataMap(7, 66, 42, 'koop/heel-nederland');
                 handling.init();
+                routes.init();
             }
         },
     }
