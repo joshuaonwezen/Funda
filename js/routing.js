@@ -1,14 +1,19 @@
-var routes = {
+var routing = {
     init: function () {
 //      Window onload to wait for objects to exist
-        window.onload = function () {
-            if (window.location.href.indexOf('#') != -1) {
-                section.toggle(window.location.href)
+        routie({
+            'playlist': function () {
+                routing.section.hideSections();
+                document.getElementById('playlist-section').style.display = "";
+            },
+            'track': function () {
+                routing.section.hideSections();
+                document.getElementById('track-section').style.display = "";
+            },
+            'details': function () {
+                routing.section.hideSections();
+                document.getElementById('details-section').style.display = "";
             }
-
-        }
-        window.addEventListener('hashchange', function () {
-            section.toggle(window.location.href);
         });
     },
 }
@@ -24,19 +29,8 @@ var section = {
             this.showSection('container');
         }
     },
-    showSection: function (section) {
-        var sectionDiv = $('.' + section);
-        if(section == 'Homepage'){
-            flex($('#search-results'))
-            flex($('.container'));
-            flex($('.filter'));
-        }else if (section.indexOf('product') != -1){
-            flex($('#product-details'));
-            flex($('#'))
-        }
-        else if (sectionDiv != undefined) {
-            show(sectionDiv);
-        }
+    showSection: function () {
+
     },
     hideSections: function () {
         //Clear all existing screens

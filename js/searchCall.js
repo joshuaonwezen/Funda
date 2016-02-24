@@ -39,7 +39,7 @@ var searchCall = {
                 ajaxRequest.promiseAjaxReq(data).then(function (result) {
                     flex($('.loader'));
                     localStorage.setItem(request, result);
-                    action(JSON.parse(result));
+                    action(JSON.parse(result));0000000000000000
                 },
                 function (error) {
                     hide($('.loader'));

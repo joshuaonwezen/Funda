@@ -11,7 +11,6 @@ main{
 }
 li{
     display:flex;
-    margin-bottom: 0.4em;
 }
 a{
     text-decoration: none;
@@ -104,6 +103,9 @@ aside > ul{
     margin-left: 1.2em;
     margin-right: 1em;
 }
+aside li{
+    margin-bottom: 0.4em;
+}
 aside h3{
     font-weight: 700;
     font-size: 100%;
@@ -137,8 +139,8 @@ aside label, aside input{
     cursor:pointer;
     visibility:visible;
     position:absolute;
-    right: 2%;
-    bottom: 2%;
+    right: 5%;
+    bottom: 5%;
     width: 35%;
     color: white;
     font-size: 6vw;
@@ -163,7 +165,9 @@ footer{
 footer nav ul{
     display:flex;
     flex-direction:column;
+    /* align-items: flex-end; */
     -webkit-padding-start: 0;
+    /* margin-right: 10%; */
 }
 footer > nav:nth-child(1) > ul > li:nth-child(1){
     font-weight: bold;
@@ -180,6 +184,7 @@ footer > nav:nth-child(2){
     background-color: #EDEDED;
     color: #666;
     padding:1em;
+    align-items:flex-end;
 }
 footer a{
     color:#3895D2;
@@ -214,7 +219,8 @@ footer a:hover{
     }
     header .search input:focus{
         border: #41829c 0.1em solid;    
-        border-radius:25px;
+        border-bottom-right-radius: 25px;
+        border-top-right-radius: 25px;
         /* ILLEGAL STUFF? */
         outline:none;
     }
@@ -226,16 +232,20 @@ footer a:hover{
     }
     .container{
         flex-flow: row wrap;
+        margin-top: 28px;
     }
+
+.container {}
     .container > .item-container{
-        flex: 19%;
+        flex: 35%;
         border: 2px solid #6EC8E5;
+        margin: 9px;
     }
     .container .list-item-price{
         visibility: visible;
-        font-size: 1.1vw;
+        font-size: 1.7vw;
         border: rgb(131, 207, 238) solid 5px;
-        width: 50%;
+        width: 30%;
     }
     footer > nav:nth-child(1){
         flex-direction: row;
@@ -244,8 +254,17 @@ footer a:hover{
     footer > nav:nth-child(1) > ul > li {
         padding: 0.5em;
     }
+    footer > nav:nth-child(2) > ul{
+        display:flex;
+        align-items: flex-end;
+    }
+
+
 }
 @media all and (min-width: 1250px){
+    [role="navigation"] > ul{
+        margin-right:10%;
+    }
     header .logo{
         margin-left: 8%;
     }
@@ -262,6 +281,10 @@ footer a:hover{
     aside > ul{
         margin-left: 0;
     }
+    footer > nav:nth-child(2) > ul{
+        margin-right:10%;
+    }
+
 }
 
 /* STATES */
