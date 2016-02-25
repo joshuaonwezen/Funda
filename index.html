@@ -7,7 +7,7 @@
         <link rel="shortcut icon" type="image/png" href="resources/favicon.ico"/>
         
         <script src="lib/underscore.js"></script>
-        <script src="lib/route.min.js"></script>
+        <script src="lib/routie.min.js"></script>
 
         <script src="js/utils.js"></script>
         <script src="js/listTemplate.js"></script>       
@@ -19,6 +19,7 @@
         <script src="js/launcher.js"></script>
     </head>
     <body>
+        <div id="homepage">
         <header role="banner">
             <nav role="navigation">
                 <div class="logo">
@@ -30,7 +31,7 @@
                 </ul>
             </nav>
             <div class="search">
-                <input type="search"/>
+                <input id="search-input" type="search"/>
                 <span class="icon-search"></span>
             </div>
         </header>
@@ -40,6 +41,11 @@
         <main role="main">
             <aside class="filter">
                 <ul>
+                    <li><h3>Prijs</h3></li>
+                    <li><label>Maximale prijs:</label></li>
+                    <li><input id="price-slider" type="range" min="0" max="100"></li>
+                    <li><label id="price-label"></label></li>
+                    
                     <li><h3>Soort aanbod</h3></li>
                     <li><input type="checkbox" id="offerrooms-1"/><label for="offerrooms-1">Woonhuis</label></li>
                     <li><input type="checkbox" id="offerrooms-2"/><label for="offerrooms-2">Appartement</label></li>
@@ -61,8 +67,6 @@
             <section id="search-results">
                 <div class="container">
                 </div>
-            </section>
-            <section id="product-details">
             </section>
         </main>
 
@@ -93,5 +97,12 @@
                 </ul>
             </nav>
         </footer>
+        </div>
+        <div id="product">
+            <main>
+                <section id="product-details">
+                </section>
+            </main>
+        </div>
     </body>
 </html>

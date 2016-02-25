@@ -90,6 +90,41 @@ header .search input{
     align-self:center;
     color: white;
 }
+
+
+/* SLIDER */
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 7.3px 0;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 11.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #000000;
+  background: #f8b000;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0.9px 0.9px 1px #000000, 0px 0px 0.9px #000000;
+  border: 0.2px solid #00001e;
+  height: 26px;
+  width: 26px;
+  border-radius: 15px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7.5px;
+}
+.filter > ul > li:nth-child(2) > label {
+    margin-left:0;
+}
+
 /* FILTER */
 aside{
     display:none;
@@ -119,6 +154,7 @@ aside label, aside input{
     margin-left:0.3em;
     cursor:pointer;
 }
+
 /* IMAGES */
 #search-results{
     flex:100%;
@@ -192,11 +228,34 @@ footer a{
 footer a:hover{
     color:#275F89;   
 }
-
+/* PRODUCT DETAIL PAGE */
+.product-container{
+   display:flex;
+   margin-top:0 !important;
+}
+.product-container img{
+    flex: 20%;
+}
+.product-table{
+    max-width: 50%;
+    position:relative;
+}
+.product-details-container{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    right: 5%;
+    top: 5%;
+}
+.product-table label{
+    background: #FFFFFF;
+    opacity:0.9;
+    padding:0.5em;
+}
 /* LOADER */
 .loader{
     position:relative;
-    margin:auto;
+    margin-top:auto;
     align-items:center;
     background:url(loader.svg) no-repeat center center;
     width: 100px;
@@ -234,12 +293,11 @@ footer a:hover{
         flex-flow: row wrap;
         margin-top: 28px;
     }
-
-.container {}
     .container > .item-container{
         flex: 35%;
         border: 2px solid #6EC8E5;
         margin: 9px;
+        margin-bottom:50px;
     }
     .container .list-item-price{
         visibility: visible;
@@ -274,7 +332,7 @@ footer a:hover{
     .icon-search{
         margin-right:10%;
     }
-    main{
+    #homepage > main{
         margin-left: 10%;
         margin-right: 10%;
     }

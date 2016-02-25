@@ -4,6 +4,7 @@ var searchCall = {
     apiPageSize: 25,
     apiSearchUrl: 'http://funda.kyrandia.nl/feeds/Aanbod.svc',
     apiMapUrl: 'http://mt1.funda.nl',
+    apiQuery: '/amsterdam/tuin/',
     
     request: {
 
@@ -11,22 +12,21 @@ var searchCall = {
             var apiRequest = searchCall.apiMapUrl + '/maptiledata.ashx?z='+z+'&x='+x+'&y='+y+'&zo='+query+'&callback=searchCall.request.parseMapResponse';
             var script = document.createElement('script')
             script.src = apiRequest;
-            $('head').appendChild(script);
+            return script;
         },
         
         parseMapResponse: function(data){
             console.log(data);
         },
         
-        getDataSearch: function (query, page) {
-            console.log(page);
+        getDataSearch: function (query, page, action) {
             var apiRequest = searchCall.apiSearchUrl + '/json/' + searchCall.apiKey + '/?type=koop&zo=' + query + '&page=' + page + '&pagesize=' + searchCall.apiPageSize;
-            this.createRequest(apiRequest, listTemplate.generateTemplate);
+            return searchCall.request.createRequest(apiRequest, action);
         },
         
-        getDataObject: function(id){
+        getDataObject: function(id, action){
             var apiRequest = searchCall.apiSearchUrl + '/json/detail/' + searchCall.apiKey + '/koop/' + id;
-            this.createRequest(apiRequest, productTemplate.createProduct);
+            return searchCall.request.createRequest(apiRequest, action);
         },
         
         createRequest: function(request, action){
@@ -39,7 +39,7 @@ var searchCall = {
                 ajaxRequest.promiseAjaxReq(data).then(function (result) {
                     flex($('.loader'));
                     localStorage.setItem(request, result);
-                    action(JSON.parse(result));0000000000000000
+                    return action(JSON.parse(result));
                 },
                 function (error) {
                     hide($('.loader'));
@@ -48,7 +48,7 @@ var searchCall = {
             } else{
                 console.log('Localstorage');
                 flex($('.loader'));
-                action(JSON.parse(storage));
+                return action(JSON.parse(storage));
             }
         },
     }

@@ -2,23 +2,20 @@ var routing = {
     init: function () {
 //      Window onload to wait for objects to exist
         routie({
-            'playlist': function () {
-                routing.section.hideSections();
-                document.getElementById('playlist-section').style.display = "";
+            'homepage': function () {
+                                console.log('homepage')
+
+                routing.hideSections();
+                show($('#homepage'));
             },
-            'track': function () {
-                routing.section.hideSections();
-                document.getElementById('track-section').style.display = "";
+            'product': function () {
+                console.log('product')
+                routing.hideSections();
+                show($('#product'));
             },
-            'details': function () {
-                routing.section.hideSections();
-                document.getElementById('details-section').style.display = "";
-            }
         });
     },
-}
-//Hiding sections on single page functions
-var section = {
+
     toggle: function (route) {
         this.hideSections();
         //Change context depending on route
@@ -34,25 +31,15 @@ var section = {
     },
     hideSections: function () {
         //Clear all existing screens
-        var screens = $('.container');
-        var sections = $('section');
-        var asides = $('aside');
+        var screens = $('body').children;
+
 
         if(screens.length != undefined){
             for (i = 0; i < screens.length; i++) {
                 hide(screens[i]);
-                hide(sections[i])
-                hide(asides[i]);
             }
         } else {
             hide(screens);
-
-            for (var i; i < sections.length; i++) {
-                hide(sections[i]);
-            }
-            for (var i; i < asides.length; i++) {
-                hide(aside);
-            }
         }
 
     },

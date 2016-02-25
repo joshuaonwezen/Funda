@@ -1,17 +1,8 @@
 var listTemplate = {
     generateTemplate: function(data){
-        listTemplate.filterData(data);
+        var generatedTemplate = listTemplate.createList(data.Objects);
     },
-    filterData: function (data) {
-        console.log(data);
-        if (data != undefined) {
-            listTemplate.createList(data.Objects);
-        }
-    },
-    createList: function(data){
-        //Push state so we can navigate back
-        history.pushState(data, 'Funda - Homepage', '#Homepage');
-
+    createList: function(data){        
         var container = $('#search-results > .container');
         for (var i = 0; data.length > i; i++) {
             //Create all objects needed for the PLP
@@ -35,14 +26,47 @@ var listTemplate = {
             itemContainer.appendChild(priceLabel);
             container.appendChild(itemContainer);
             
-            handling.listProductClick('product-' + data[i].Id);
+            var listItem = document.getElementById('product-' + data[i].Id)
+            handling.listProductClick(listItem);
         }
-        
+       
+        if (data.length < 1) {
+            var errorLabel = document.createElement('label');
+            var errorText = document.createTextNode('Er zijn geen resultaten gevonden.');
+            errorLabel.appendChild(errorText)
+            container.appendChild(errorLabel);
+        }
+        history.pushState(data, 'Funda - Homepage', '#homepage');
         hide($('.loader'));
     },
     createPaging: function(pagenumber){
-        var timeout = setTimeout(function () {
-            searchCall.request.getDataSearch('/amsterdam/tuin/', pagenumber);
+        return setTimeout(function () {
+            searchCall.request.getDataSearch('/amsterdam/tuin/', pagenumber, listTemplate.generateTemplate);
         }, 1000);       
     },
+    createListWithFilters: function(data){        
+        var priceLabel = document.getElementById('price-label');
+        var priceSlider = document.getElementById('price-slider');
+
+        var sliderVal = priceSlider.value;
+        var priceTransformed = sliderVal * 10000;
+        var price = priceTransformed.toLocaleString("nl-NL", {style: "currency", currency: "EUR"}).split(',');
+        if (priceTransformed == 1000000) {
+            priceLabel.innerHTML = price[0] + '+';
+        } else {
+            priceLabel.innerHTML = price[0];
+        }
+        
+        var filteredData = [];
+        for(var i = 0; i < data.Objects.length; i++){
+            if(data.Objects[i].Prijs.Koopprijs < priceTransformed || priceTransformed == 1000000){
+                filteredData.push(data.Objects[i]);
+            }
+        }
+        var container = $('#search-results > .container');
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+        return listTemplate.createList(filteredData);
+    }
 }
