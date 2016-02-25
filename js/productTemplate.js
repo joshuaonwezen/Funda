@@ -24,7 +24,15 @@ var productTemplate = {
         
         for (var i = 0; i < 4; i++) {
             var img = productTemplate.createProductImages(result.Media[i].MediaItems[2].Url);
-            var details = productTemplate.createProductLabels(result.Titels[0].Omschrijving, result.SoortWoning, result.Voorzieningen, result.KoopPrijs, i);
+            if (i == 0) {
+                var details = productTemplate.createProductLabels(result.Titels[0].Omschrijving, 'Soort woning: ' + result.SoortWoning, 'Voorzieningen: ' + result.Voorzieningen, 'Prijs: ' + result.KoopPrijs.toLocaleString("nl-NL",{style:"currency", currency:"EUR"}).replace(',00', ''));
+            } else if (i == 1) {
+                details = productTemplate.createProductLabels('Tuin: ' + result.Tuin, 'Ligging: ' + result.Ligging, 'Bouwvorm: ' + result.Bouwvorm, 'Bouwjaar: ' + result.Bouwjaar);
+            } else if (i == 2) {
+                details = productTemplate.createProductLabels('Makelaar: ' + result.Makelaar, 'Telefoonnummer: ' +  result.MakelaarTelefoon, 'Verkoopstatus: ' + result.VerkoopStatus, 'Aangeboden sinds: ' + result.AangebodenSindsTekst);
+            } else if (i == 3) {
+                details = productTemplate.createProductLabels('Kamers: ' + result.AantalKamers, 'Badkamers: ' + result.AantalBadkamers, 'Woonlagen: ' + result.AantalWoonlagen, 'Oppervlakte: ' + result.WoonOppervlakte + 'm2');
+            }
 
             var productDetails = document.createElement('div');
             productDetails.setAttribute('class', 'product-table product-table-' + i);
@@ -52,15 +60,15 @@ var productTemplate = {
         aLabel.appendChild(aText);
 
         var bLabel = document.createElement('label');
-        var bText = document.createTextNode('Soort woning: ' + b);
+        var bText = document.createTextNode(b);
         bLabel.appendChild(bText);
 
         var cLabel = document.createElement('label');
-        var cText = document.createTextNode('Voorzieningen: ' + c);
+        var cText = document.createTextNode(c);
         cLabel.appendChild(cText);
 
         var dLabel = document.createElement('label');
-        var dText = document.createTextNode('Prijs: ' + d);
+        var dText = document.createTextNode(d);
         dLabel.appendChild(dText);
 
         container.appendChild(aLabel);
