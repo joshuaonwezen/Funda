@@ -41,6 +41,10 @@ var handling = {
                 flex($('.loader'));
                 listTemplate.createPaging(pagenumber);
                 pagenumber++;
+            }else if(scrollPercent > 99 && window.location.href.indexOf('product') != -1 && $('.product-table').length < 5){
+                flex($('.loader'));
+                var containerId = $('.product-container').getAttribute('class').replace('product-container container ', '');
+                searchCall.request.getDataObject(containerId, productTemplate.loadImages);
             }
 //            var event = new Event('change');
 //            document.getElementById('price-slider').dispatchEvent(event);

@@ -297,18 +297,23 @@ footer a:hover{
     animation-delay: 0.2s;
 }
 
-
 @-webkit-keyframes slide {
-    100% { bottom: -5px; }
+    100% { bottom: 0; }
 }
 
 @keyframes slide {
-    100% { bottom: -5px; }
+    100% { bottom: 0; }
 }
 .product-table label{
     opacity:0.9;
     padding:0.5em;
     cursor: pointer;
+}
+#product > footer{
+    text-align:center;
+    padding:20px;
+    background-color: #E7F1F5;
+    cursor:pointer;
 }
 /* LOADER */
 .loader{

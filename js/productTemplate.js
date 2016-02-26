@@ -13,14 +13,13 @@ var productTemplate = {
     },
     createProductDetails: function(result){
         
-        console.log(result);
         var container = $('#product-details');
         while (container.firstChild) {
             container.removeChild(container.firstChild);
         }
         
         var productContainer = document.createElement('div');
-        productContainer.setAttribute('class', 'product-container container ' + result.Id);
+        productContainer.setAttribute('class', 'product-container container ' + result.InternalId);
         
         for (var i = 0; i < 4; i++) {
             var img = productTemplate.createProductImages(result.Media[i].MediaItems[2].Url);
@@ -79,4 +78,23 @@ var productTemplate = {
         
         return container;
     },
+    loadImages: function(result){
+        var productContainer = $('.product-container');
+        for (var i = 4; i < result.Media.length; i++) {
+            if (result.Media[i].MediaItems[2] == undefined) {
+                $('#product > footer').addEventListener('click', function(){
+                   window.scrollTo(0, 0); 
+                });
+                return $('#product > footer').innerHTML = 'Terug naar details';
+            }
+                var img = productTemplate.createProductImages(result.Media[i].MediaItems[2].Url);
+                var productDetails = document.createElement('div');
+
+                productDetails.setAttribute('class', 'product-table product-table-' + i);
+                productDetails.appendChild(img);
+
+                productContainer.appendChild(productDetails);
+        }
+        return hide($('.loader'));
+    }
 }
