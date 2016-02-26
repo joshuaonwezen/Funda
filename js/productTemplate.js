@@ -25,7 +25,7 @@ var productTemplate = {
         for (var i = 0; i < 4; i++) {
             var img = productTemplate.createProductImages(result.Media[i].MediaItems[2].Url);
             if (i == 0) {
-                var details = productTemplate.createProductLabels(result.Titels[0].Omschrijving, 'Soort woning: ' + result.SoortWoning, 'Voorzieningen: ' + result.Voorzieningen, 'Prijs: ' + result.KoopPrijs.toLocaleString("nl-NL",{style:"currency", currency:"EUR"}).replace(',00', ''));
+                var details = productTemplate.createProductLabels('Adres: ' + result.Adres, 'Soort woning: ' + result.SoortWoning, 'Voorzieningen: ' + result.Voorzieningen, 'Prijs: ' + result.KoopPrijs.toLocaleString("nl-NL",{style:"currency", currency:"EUR"}).replace(',00', ''));
             } else if (i == 1) {
                 details = productTemplate.createProductLabels('Tuin: ' + result.Tuin, 'Ligging: ' + result.Ligging, 'Bouwvorm: ' + result.Bouwvorm, 'Bouwjaar: ' + result.Bouwjaar);
             } else if (i == 2) {
