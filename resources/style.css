@@ -108,11 +108,11 @@ input[type=range]::-webkit-slider-runnable-track {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #000000;
   background: #E7F1F5;
   border-radius: 1.3px;
-  border: 0.2px solid #010101;
+  border: 0.2px solid #d3d3d3;
 }
 input[type=range]::-webkit-slider-thumb {
   box-shadow: 0.9px 0.9px 1px #000000, 0px 0px 0.9px #000000;
-  border: 0.2px solid #00001e;
+  border: 0.2px solid #d3d3d3;
   height: 26px;
   width: 26px;
   border-radius: 15px;
@@ -169,7 +169,7 @@ aside a{
     bottom: 1px;
     background-color: #E7F1F5;
     box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
-    border: 0.2px solid #010101;
+    border: 0.2px solid #d3d3d3;
     border-radius: 8px;
 }
 .filter-checkbox input:checked + label:before {
@@ -284,12 +284,26 @@ footer a:hover{
     display:none;
     flex-direction:column;
     background: #FFFFFF;
-    border: #E7F1F5 solid 5px;
-    border-radius: 25px;
+    border-top-left-radius: 25px;
     padding: 5px;
     position:absolute;
-    right: 5%;
-    top: 5%;
+    right: 0%;
+    bottom: -250px;
+    
+    position: absolute;
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 2s;
+    animation: slide 0.5s forwards;
+    animation-delay: 0.2s;
+}
+
+
+@-webkit-keyframes slide {
+    100% { bottom: -5px; }
+}
+
+@keyframes slide {
+    100% { bottom: -5px; }
 }
 .product-table label{
     opacity:0.9;
