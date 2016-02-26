@@ -1,26 +1,31 @@
 var handling = {
-    init: function(){
-        handling.search();
+    init: function(){   
+                
+        var searchButton = $('.icon-search');
+        var searchInput = document.getElementById('search-input');
+        var container = $('#search-results > .container');
+        handling.searchButton(searchButton, searchInput, container);
+        handling.searchInput(searchButton, searchInput)
         
         var pagenumber = 2;
         handling.infiteScrolling(pagenumber);
         
         var priceSlider = document.getElementById('price-slider');
         handling.priceRangeSlider(priceSlider);
-    },
-    search: function(){
-        var searchButton = $('.icon-search');
-        var searchInput = document.getElementById('search-input');
-        var container = $('#search-results > .container');
 
-        searchButton.addEventListener('click', function(){
+    },
+    searchButton: function(searchButton, searchInput, container){
+        return searchButton.addEventListener('click', function(){
             while (container.firstChild) {
                 container.removeChild(container.firstChild);
             }
             searchCall.request.getDataSearch('/' + searchInput.value + '/', 1, listTemplate.generateTemplate);
             searchCall.apiQuery = '/' + searchInput.value + '/';
         });
-        searchInput.addEventListener("keypress", function (event) {
+
+    },
+    searchInput: function(searchButton, searchInput){
+        return searchInput.addEventListener("keypress", function (event) {
             if (event.keyCode == 13)
                 searchButton.click();
         });

@@ -33,7 +33,7 @@ var productTemplate = {
             } else if (i == 3) {
                 details = productTemplate.createProductLabels('Kamers: ' + result.AantalKamers, 'Badkamers: ' + result.AantalBadkamers, 'Woonlagen: ' + result.AantalWoonlagen, 'Oppervlakte: ' + result.WoonOppervlakte + 'm2');
             }
-
+            
             var productDetails = document.createElement('div');
             productDetails.setAttribute('class', 'product-table product-table-' + i);
             
@@ -49,6 +49,7 @@ var productTemplate = {
         var img = document.createElement('img');
         img.src = images;
         img.setAttribute('class', 'product-image');
+        
         return img;
     },
     createProductLabels: function(a, b, c, d){
