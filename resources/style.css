@@ -90,14 +90,14 @@ header .search input{
     background-repeat: no-repeat;
     display:none;
     height: 38%;
-    width: 1.4em;
+    width: 1em;
     padding: 0.5em;
     margin: auto;
     margin-right: 0.5em;
     cursor: pointer;
     border-radius: 25px;
     -webkit-transition: background-color 1000ms ease-out;
-            transition: background-color 1000ms ease-out;
+    transition: background-color 1000ms ease-out;
 }
 .icon-search:hover{
     background-color: #FFFFFF;
