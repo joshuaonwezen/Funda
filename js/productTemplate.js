@@ -23,21 +23,37 @@ var productTemplate = {
         
         for (var i = 0; i < 4; i++) {
             var img = productTemplate.createProductImages(result.Media[i].MediaItems[2].Url);
+            var list = document.createElement('ul');
+            list.setAttribute('class', 'product-details-list');
+
+            //Yes very ugly. best way would be an storing the data in an array and looping the function, but time & quickfix.
             if (i == 0) {
-                var details = productTemplate.createProductLabels('Adres: ' + result.Adres, 'Soort woning: ' + result.SoortWoning, 'Voorzieningen: ' + result.Voorzieningen, 'Prijs: ' + result.KoopPrijs.toLocaleString("nl-NL",{style:"currency", currency:"EUR"}).replace(',00', ''));
+                productTemplate.createProductLabels('Adres', result.Adres, list);
+                productTemplate.createProductLabels('Soort woning', result.SoortWoning, list);
+                productTemplate.createProductLabels('Voorzieningen', result.Voorzieningen, list);
+                productTemplate.createProductLabels('Prijs', result.KoopPrijs.toLocaleString("nl-NL",{style:"currency", currency:"EUR"}).replace(',00', ''), list);
             } else if (i == 1) {
-                details = productTemplate.createProductLabels('Tuin: ' + result.Tuin, 'Ligging: ' + result.Ligging, 'Bouwvorm: ' + result.Bouwvorm, 'Bouwjaar: ' + result.Bouwjaar);
+                productTemplate.createProductLabels('Tuin', result.Tuin, list);
+                productTemplate.createProductLabels('Ligging', result.Ligging, list);
+                productTemplate.createProductLabels('Bouwvorm', result.Bouwvorm, list);
+                productTemplate.createProductLabels('Bouwjaar', result.Bouwjaar, list);
             } else if (i == 2) {
-                details = productTemplate.createProductLabels('Makelaar: ' + result.Makelaar, 'Telefoonnummer: ' +  result.MakelaarTelefoon, 'Verkoopstatus: ' + result.VerkoopStatus, 'Aangeboden sinds: ' + result.AangebodenSindsTekst);
+                productTemplate.createProductLabels('Makelaar', result.Makelaar, list);
+                productTemplate.createProductLabels('Telefoonnummer',  result.MakelaarTelefoon, list);
+                productTemplate.createProductLabels('Verkoopstatus', result.VerkoopStatus, list);
+                productTemplate.createProductLabels('Aangeboden sinds', result.AangebodenSindsTekst, list);
             } else if (i == 3) {
-                details = productTemplate.createProductLabels('Kamers: ' + result.AantalKamers, 'Badkamers: ' + result.AantalBadkamers, 'Woonlagen: ' + result.AantalWoonlagen, 'Oppervlakte: ' + result.WoonOppervlakte + 'm2');
+                productTemplate.createProductLabels('Kamers', result.AantalKamers, list);
+                productTemplate.createProductLabels('Badkamers', result.AantalBadkamers, list);
+                productTemplate.createProductLabels('Woonlagen', result.AantalWoonlagen, list);
+                productTemplate.createProductLabels('Oppervlakte', result.WoonOppervlakte + 'm2', list);
             }
             
             var productDetails = document.createElement('div');
             productDetails.setAttribute('class', 'product-table product-table-' + i);
             
             productDetails.appendChild(img);
-            productDetails.appendChild(details);
+            productDetails.appendChild(list);
             
             productContainer.appendChild(productDetails);
         }
@@ -51,11 +67,12 @@ var productTemplate = {
         
         return img;
     },
-    createProductLabels: function(a, b, c, d){
-        var container = document.createElement('div');
-        container.setAttribute('class', 'product-details-container');
-        
+    createProductLabels: function(a, b, list){
+        var listObj = document.createElement('li');
+        listObj.setAttribute('class', 'product-details-list-obj');
+            
         var aLabel = document.createElement('label');
+        aLabel.setAttribute('class', 'product-label');
         var aText = document.createTextNode(a);
         aLabel.appendChild(aText);
 
@@ -63,20 +80,11 @@ var productTemplate = {
         var bText = document.createTextNode(b);
         bLabel.appendChild(bText);
 
-        var cLabel = document.createElement('label');
-        var cText = document.createTextNode(c);
-        cLabel.appendChild(cText);
 
-        var dLabel = document.createElement('label');
-        var dText = document.createTextNode(d);
-        dLabel.appendChild(dText);
-
-        container.appendChild(aLabel);
-        container.appendChild(bLabel);
-        container.appendChild(cLabel);
-        container.appendChild(dLabel);
+        listObj.appendChild(aLabel);
+        listObj.appendChild(bLabel);
         
-        return container;
+        return list.appendChild(listObj);
     },
     loadImages: function(result){
         var productContainer = $('.product-container');
