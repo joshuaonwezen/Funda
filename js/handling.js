@@ -19,8 +19,10 @@ var handling = {
             while (container.firstChild) {
                 container.removeChild(container.firstChild);
             }
-            searchCall.request.getDataSearch('/' + searchInput.value + '/', 1, listTemplate.generateTemplate);
-            searchCall.apiQuery = '/' + searchInput.value + '/';
+            searchValue = searchInput.value.replace(/\s/g, '/');
+
+            searchCall.request.getDataSearch('/' + searchValue + '/', 1, listTemplate.generateTemplate);
+            searchCall.apiQuery = '/' + searchValue + '/';
         });
 
     },
