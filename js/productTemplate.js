@@ -57,7 +57,6 @@ var productTemplate = {
             
             productContainer.appendChild(productDetails);
         }
-
         return container.appendChild(productContainer);
     },
     createProductImages: function(images){
@@ -93,6 +92,7 @@ var productTemplate = {
                 $('#product > footer').addEventListener('click', function(){
                    window.scrollTo(0, 0); 
                 });
+                hide($('.loader'));
                 return $('#product > footer').innerHTML = 'Terug naar details';
             }
                 var img = productTemplate.createProductImages(result.Media[i].MediaItems[2].Url);

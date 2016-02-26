@@ -45,6 +45,7 @@ var handling = {
                 flex($('.loader'));
                 var containerId = $('.product-container').getAttribute('class').replace('product-container container ', '');
                 searchCall.request.getDataObject(containerId, productTemplate.loadImages);
+                
             }
 //            var event = new Event('change');
 //            document.getElementById('price-slider').dispatchEvent(event);
