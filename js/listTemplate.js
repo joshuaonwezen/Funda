@@ -22,6 +22,7 @@ var listTemplate = {
 
                 var img = document.createElement('img');
                 img.src = data[i].FotoLarge;
+                img.setAttribute('alt', data[i].Titel);
                 img.setAttribute('class', 'list-item-image');
 
                 var priceLabel = document.createElement('label');
