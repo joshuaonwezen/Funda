@@ -21,9 +21,8 @@ var listTemplate = {
                 itemContainer.setAttribute('id', 'product-' + data[i].Id);
 
                 var img = document.createElement('img');
-                console.log(data[i]);
                 img.src = data[i].FotoLarge;
-                img.setAttribute('alt', data[i].Titel);
+                img.setAttribute('alt', data[i].Adres);
 
                 img.setAttribute('class', 'list-item-image');
 
