@@ -19,7 +19,7 @@ var listTemplate = {
                 var itemContainer = document.createElement('div');
                 itemContainer.setAttribute('class', 'item-container');
                 itemContainer.setAttribute('id', 'product-' + data[i].Id);
-
+                console.log(data[i]);
                 var img = document.createElement('img');
                 img.src = data[i].FotoLarge;
                 img.setAttribute('alt', data[i].Titel);
