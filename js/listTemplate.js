@@ -19,11 +19,11 @@ var listTemplate = {
                 var itemContainer = document.createElement('div');
                 itemContainer.setAttribute('class', 'item-container');
                 itemContainer.setAttribute('id', 'product-' + data[i].Id);
+                itemContainer.setAttribute('tabindex', 0);
 
                 var img = document.createElement('img');
                 img.src = data[i].FotoLarge;
                 img.setAttribute('alt', data[i].Adres);
-
                 img.setAttribute('class', 'list-item-image');
 
                 var priceLabel = document.createElement('label');

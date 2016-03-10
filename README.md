@@ -5,6 +5,8 @@ TODO 2: HTML wordt momenteel al in de API teruggegeven met de request data i.p.v
 
 TODO 3: Wanneer images niet geladen kunnen worden alsnog de tekst en titel geven van het huis. (DONE)
 
+TODO 4: Divjes met huizen zijn niet met tab te selecteren, tabindex toevoegen (DONE)
+
 
 # Funda Project Week 1
 #http://onwezen.github.io/Funda/
