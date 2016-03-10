@@ -20,6 +20,7 @@ var listTemplate = {
                 itemContainer.setAttribute('class', 'item-container');
                 itemContainer.setAttribute('id', 'product-' + data[i].Id);
                 itemContainer.setAttribute('tabindex', 0);
+                
 
                 var img = document.createElement('img');
                 img.src = data[i].FotoLarge;
@@ -37,6 +38,12 @@ var listTemplate = {
                 itemContainer.appendChild(img);
                 itemContainer.appendChild(priceLabel);
                 container.appendChild(itemContainer);
+                itemContainer.addEventListener('keyup', function(e){
+                    if (e.which == 13 || e.which == 32){
+                        itemContainer.click();
+                    }
+                });
+                
 
                 var listItem = document.getElementById('product-' + data[i].Id)
 
