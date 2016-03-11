@@ -5,7 +5,37 @@ TODO 2: No script error
 
 TODO 3: Wanneer images niet geladen kunnen worden alsnog de tekst en titel geven van het huis. (DONE)
 
-TODO 4: Divjes met huizen zijn niet met tab te selecteren, tabindex toevoegen (DONE)
+TODO 4: Divjes met huizen zijn niet met tab te selecteren, tabindex toevoegen (Beste zou zijn met A'tjes of buttons maar dit is voor later)(DONE)
+
+TODO 5: Wanneer images op de PDP niet worden geladen laat fullscreen de informatie zien met nieuwe styling en zonder de popup css transition.
+
+TODO 6: ARIA roles
+
+TODO 7: Templating kan beter
+
+TODO 8: Gebruik maken van de kleinere image sizes van funda wanneer internet sloom is
+
+
+##Kleur
+![alt tag](color.jpg)
+![alt tag](constrast.png)
+
+##Zonder JS
+![alt tag](layout.png)
+![alt tag](geenjs.jpg)
+
+##Screenreader
+
+Leest de searchbalk goed voor alleen de list view zoals verwacht niet, A'tjes voor elk huis zou natuurlijk het slimst zijn
+
+##Breedband
+Sloom!!
+
+
+##CustomFonts/Cookies/CDN/Wifi 
+
+N.v.t.
+
 
 TODO 5: Wanneer images op de PDP niet worden geladen laat fullscreen de informatie zien met nieuwe styling en zonder de popup css transition.
 
