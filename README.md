@@ -21,8 +21,8 @@ TODO 8: Gebruik maken van de kleinere image sizes van funda wanneer internet slo
 ![alt tag](constrast.png)
 
 ##Zonder JS
-![alt tag](layout.png)
-![alt tag](geenjs.jpg)
+![alt tag](layout.jpg)
+![alt tag](geenjs.png)
 
 ##Screenreader
 
