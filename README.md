@@ -1,13 +1,17 @@
 #Browser Technologies
 TODO 1: Images worden momenteel met scrolling ingeladen, een handige change zou zijn om lazyloading voor mobile toe te voegen, alleen images inladen wanneer deze in het scherm zijn
 
-TODO 2: HTML wordt momenteel al in de API teruggegeven met de request data i.p.v. losse strings etc. dus dit is al goed, echter kan de HTML appending beter worden gedaan d.m.v. clonen van een al bestaand divje (wat ook ervoor zou zorgen dat de pagina iets te displayen heeft wanneer de API request niet uitgevoerd kan worden)
+TODO 2: No script error
 
 TODO 3: Wanneer images niet geladen kunnen worden alsnog de tekst en titel geven van het huis. (DONE)
 
 TODO 4: Divjes met huizen zijn niet met tab te selecteren, tabindex toevoegen (DONE)
 
 TODO 5: Wanneer images op de PDP niet worden geladen laat fullscreen de informatie zien met nieuwe styling en zonder de popup css transition.
+
+TODO 6: ARIA roles
+
+TODO 7: rHTML appending kan beter worden gedaan d.m.v. clonen van een al bestaand divje (wat ook ervoor zou zorgen dat de pagina iets te displayen heeft wanneer de API request niet uitgevoerd kan worden), betere templating.
 
 
 # Funda Project Week 1
