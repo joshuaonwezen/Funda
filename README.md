@@ -7,6 +7,8 @@ TODO 3: Wanneer images niet geladen kunnen worden alsnog de tekst en titel geven
 
 TODO 4: Divjes met huizen zijn niet met tab te selecteren, tabindex toevoegen (DONE)
 
+TODO 5: Wanneer images op de PDP niet worden geladen laat fullscreen de informatie zien met nieuwe styling en zonder de popup css transition.
+
 
 # Funda Project Week 1
 #http://onwezen.github.io/Funda/
