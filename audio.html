@@ -1,0 +1,9 @@
+<audio id="audioplayer" preload controls loop>
+    <source src="audio.mp3">
+</audio>
+<script type="text/javascript">
+    var audioTag = document.createElement('audio');
+    if (!(!!(audioTag.canPlayType) && ("no" != audioTag.canPlayType("audio/mpeg")) && ("" != audioTag.canPlayType("audio/mpeg")))) {
+        AudioPlayer.embed("audioplayer", {soundFile: "audio.mp3"});
+    }
+</script>
