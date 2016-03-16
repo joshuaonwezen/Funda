@@ -5,14 +5,14 @@
 ##HTML 5
 
 * Audio
-* Reading files
+* Video
 
 ##CSS
 
 * Flex box
-* Fonts
+* Color 3 (Opacity)
 
-##ES6
+##JS
 
 * Promise
 * Map
