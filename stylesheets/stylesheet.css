@@ -245,7 +245,12 @@ a {
     font-size: 0.9rem; } }
 
 
+/* MY STUFF */
 .mydiv {  
   opacity: 0.55; /* CSS3 */
   filter: alpha(opacity=55); /* IE6+ */
+    display:flex;
+    width: 100%;
+    float:right;
+  }
 }
