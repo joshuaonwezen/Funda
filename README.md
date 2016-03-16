@@ -15,4 +15,4 @@
 ##JS
 
 * Promise
-* Map
+* Library (CDN)
