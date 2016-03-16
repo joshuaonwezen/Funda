@@ -11,11 +11,17 @@
   </head>
   <body>
     <div class="mydiv">
-
     <audio id="audioplayer" preload controls loop>
-    <source src="audio.mp3">
-</audio>
-</div>
+      <source src="audio.mp3">
+    </audio>
+
+      <video id="mainVid" class="video-js vjs-default-skin" controls
+          preload="auto" width="640" height="480" poster="http://media02.hongkiat.com/code-fallback-methods/default_preview_img.png"
+          data-setup="{}">
+          <source src="my_video.mp4" type="video/mp4">
+          <source src="my_video.webm" type="video/webm">
+      </video>
+  </div>
 <script type="text/javascript">
     var audioTag = document.createElement('audio');
     if (!(!!(audioTag.canPlayType) && ("no" != audioTag.canPlayType("audio/mpeg")) && ("" != audioTag.canPlayType("audio/mpeg")))) {
