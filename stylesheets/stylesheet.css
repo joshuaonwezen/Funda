@@ -243,3 +243,17 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+<<<<<<< HEAD
+=======
+
+
+/* MY STUFF */
+.mydiv {  
+  opacity: 0.55; /* CSS3 */
+  filter: alpha(opacity=55); /* IE6+ */
+    display:flex;
+    width: 100%;
+    float:right;
+  }
+}
+>>>>>>> funda
