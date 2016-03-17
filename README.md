@@ -83,11 +83,6 @@ Sloom!!
 N.v.t.
 
 
-TODO 5: Wanneer images op de PDP niet worden geladen laat fullscreen de informatie zien met nieuwe styling en zonder de popup css transition.
-
-TODO 6: ARIA roles
-
-TODO 7: rHTML appending kan beter worden gedaan d.m.v. clonen van een al bestaand divje (wat ook ervoor zou zorgen dat de pagina iets te displayen heeft wanneer de API request niet uitgevoerd kan worden), betere templating.
 
 
 # Funda Project Week 1
