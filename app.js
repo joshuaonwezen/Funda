@@ -1,4 +1,6 @@
 
+//THIS IS A POLYFILL
+
 var Promise = require("bluebird");
 var fs = Promise.promisifyAll(require("fs"));
 
