@@ -1,7 +1,10 @@
 #Week 2
 
-
-
+#Funda
+Voordat images ingeladen worden wordt nu een thumbnail geshowed zodat voor slome internet snelheden niet gewacht hoeft te
+worden op de AJAX request.
+Een fallback voor het niet laden van images is natuurlijk de alt maar met .onload events kunnen we de images manipuleren door images
+nadat ze geladen worden pas de thumbnail te laten overwriten.
 
 #Feature Detection
 

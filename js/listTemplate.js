@@ -1,5 +1,7 @@
 var listTemplate = {
     generateTemplate: function(data){
+        var container = $('#search-results > .container');
+        container.innerHTML = '';
         listTemplate.createList(data.Objects);
     },
     createList: function(data){        
@@ -23,9 +25,14 @@ var listTemplate = {
                 
 
                 var img = document.createElement('img');
-                img.src = data[i].FotoLarge;
+                //img.setAttribute = ('style', 'background-image: url("resources/thumbnail.jpg"');
+                img.srcset = data[i].FotoLarge;
+                img.src = 'resources/thumbnail.jpg';
+                
+                img.setAttribute('id', 'img-' + data[i].Id)
                 img.setAttribute('alt', data[i].Adres);
                 img.setAttribute('class', 'list-item-image');
+                img.setAttribute('onload', preload.imageChange(img));
 
                 var priceLabel = document.createElement('label');
                 priceLabel.setAttribute('class', 'list-item-price');
