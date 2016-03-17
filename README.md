@@ -1,3 +1,49 @@
+#Week 2
+
+
+
+
+#Feature Detection
+
+
+
+##HTML 5
+
+
+
+* Audio
+
+![alt tag](screenshots/audio.png)
+![alt tag](screenshots/audio1.png)
+
+* Video
+
+
+![alt tag](screenshots/video.png)
+
+##CSS
+
+
+
+* Flex box
+
+![alt tag](screenshots/flex.png)
+
+* Color 3 (Opacity)
+![alt tag](screenshots/color.png)
+
+##JS
+
+
+
+* Promise
+![alt tag](screenshots/promise.png)
+
+* Library (CDN)
+
+![alt tag](screenshots/cdn.png)
+
+
 #Browser Technologies
 TODO 1: Images worden momenteel met scrolling ingeladen, een handige change zou zijn om lazyloading voor mobile toe te voegen, alleen images inladen wanneer deze in het scherm zijn
 
