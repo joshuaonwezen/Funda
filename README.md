@@ -6,6 +6,15 @@ worden op de AJAX request.
 Een fallback voor het niet laden van images is natuurlijk de alt maar met .onload events kunnen we de images manipuleren door images
 nadat ze geladen worden pas de thumbnail te laten overwriten.
 
+###Before
+
+![alt tag](screenshots/before.png)
+
+###After
+
+![alt tag](screenshots/after.png)
+
+
 #Feature Detection
 
 
